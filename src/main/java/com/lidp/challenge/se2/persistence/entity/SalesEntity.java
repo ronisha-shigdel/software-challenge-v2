@@ -1,12 +1,8 @@
 package com.lidp.challenge.se2.persistence.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
@@ -17,6 +13,7 @@ import java.time.LocalDate;
 @Table(name = "sales")
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class SalesEntity {
 
     @Id
@@ -34,44 +31,4 @@ public class SalesEntity {
 
     @Column(name = "saleDate")
     private LocalDate saleDate;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public BigDecimal getSaleAmount() {
-        return saleAmount;
-    }
-
-    public void setSaleAmount(BigDecimal saleAmount) {
-        this.saleAmount = saleAmount;
-    }
-
-    public LocalDate getSaleDate() {
-        return saleDate;
-    }
-
-    public void setSaleDate(LocalDate saleDate) {
-        this.saleDate = saleDate;
-    }
 }
